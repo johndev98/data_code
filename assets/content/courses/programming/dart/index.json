@@ -7,14 +7,14 @@
             "title": "Dart Basic",
             "subtitle": "Biến, kiểu dữ liệu, vòng lặp và hàm",
             "image": "https://raw.githubusercontent.com/johndev98/data_code/main/assets/images/dart_basic.png",
-            "path": "content/courses/programming/dart/basic/index.json"
+            "path": "content/courses/programming/dart/dart_basic/index.json"
         },
         {
             "id": "dart_advanced",
             "title": "Dart Advanced",
             "subtitle": "OOP, Generics, Asynchronous (Stream/Future)",
             "image": "https://raw.githubusercontent.com/johndev98/data_code/main/assets/images/dart_adv.png",
-            "path": "content/courses/programming/dart/dart_advanced.json"
+            "path": "content/courses/programming/dart/dart_advanced/index.json"
         }
     ]
 }
