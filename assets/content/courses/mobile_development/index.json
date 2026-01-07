@@ -1,0 +1,24 @@
+{
+    "version": 1,
+    "type": "collection",
+    "items": [
+        {
+            "id": "flutter",
+            "title": "Flutter",
+            "subtitle": "Build beautiful native apps",
+            "image": "https://images.viblo.asia/b9e1fc04-1f78-4de3-95a8-5785172e15b6.png"
+        },
+        {
+            "id": "swiftui",
+            "title": "Swift UI",
+            "subtitle": "Modern iOS Development",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQTOtMJHrvZcTyLU49M0aDQ3qTfh9fk83VjA&s"
+        },
+        {
+            "id": "kotlin",
+            "title": "Kotlin",
+            "subtitle": "Android Modern Language",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYbT2y--2FqAUJ__xHwQG2JswcVRbSD_kpeA&s"
+        }
+    ]
+}

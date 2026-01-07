@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "type": "collection",
+    "items": [
+        {
+            "id": "programming",
+            "title": "Programming",
+            "subtitle": "C++, Python, Dart, JavaScript, Java and more",
+            "image": "https://webandcrafts.com/_next/image?url=https%3A%2F%2Fadmin.wac.co%2Fuploads%2FBest_Backend_Languages_For_2026_1_7b445400dd.jpg&w=4500&q=90",
+            "path": "courses/programming/index.json"
+        },
+        {
+            "id": "mobile-development",
+            "title": "Mobile Development",
+            "subtitle": "Flutter, React Native, iOS & Android",
+            "image": "https://www.zenesys.com/getmedia/5c848139-0b9c-4bdf-8d19-a3174232ff49/Mobile-App-Development-Process.png",
+            "path": "courses/mobile_development/index.json"
+        },
+        {
+            "id": "web-development",
+            "title": "Web Development",
+            "subtitle": "HTML, CSS, ReactJS, Next.js",
+            "image": "https://www.ronins.co.uk/wp-content/uploads/2024/01/is-web-development-dying.jpg",
+            "path": "courses/web_development/index.json"
+        },
+        {
+            "id": "game-development",
+            "title": "Game Development",
+            "subtitle": "Xây dựng thế giới ảo với Unity và Unreal Engine",
+            "image": "https://www.buildbox.com/wp-content/uploads/2018/06/Adding-Polish-to-Games.jpg",
+            "path": "courses/game_development/index.json"
+        },
+        {
+            "id": "cyber-security",
+            "title": "Cyber Security",
+            "subtitle": "Network Security, Cloud Security",
+            "image": "https://img.freepik.com/free-vector/cyber-security-concept_23-2148532223.jpg",
+            "path": "courses/cyber_security/index.json"
+        },
+        {
+            "id": "ethical-hacking",
+            "title": "Ethical Hacking",
+            "subtitle": "Penetration Testing, Kali Linux",
+            "image": "https://www.logsign.com/uploads/ethical_2e0097bfc3.jpg",
+            "path": "courses/ethical_hacking/index.json"
+        },
+        {
+            "id": "ui-ux-design",
+            "title": "UI/UX Design",
+            "subtitle": "Figma, Adobe XD, Design Principles",
+            "image": "https://img.freepik.com/free-vector/web-design-landing-page-template_23-2149122312.jpg",
+            "path": "courses/ui_ux_design/index.json"
+        }
+    ]
+}

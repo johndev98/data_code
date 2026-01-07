@@ -1,0 +1,48 @@
+{
+    "version": 1,
+    "type": "collection",
+    "items": [
+        {
+            "id": "dart",
+            "title": "Dart",
+            "subtitle": "Ngôn ngữ đa nền tảng cho Flutter",
+            "image": "https://swansoftwaresolutions.com/wp-content/uploads/2020/02/08.20.20-What-is-Dart-and-how-is-it-used-1.jpg"
+        },
+        {
+            "id": "swift",
+            "title": "Swift",
+            "subtitle": "Ngôn ngữ của hệ sinh thái Apple",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTURJh-ZzFxlVZCYJXXTNsre1C0sXTL_XQ6yg&s"
+        },
+        {
+            "id": "python",
+            "title": "Python",
+            "subtitle": "Ngôn ngữ tốt nhất cho AI và Data",
+            "image": "https://images.viblo.asia/cb28822d-c061-474c-9ade-e85ae6701eb9.png"
+        },
+        {
+            "id": "java",
+            "title": "Java",
+            "subtitle": "Nền tảng cho ứng dụng doanh nghiệp",
+            "image": "https://websitechuyennghiep.vn/data/images/lap-trinh-java.jpg"
+        },
+        {
+            "id": "javascript",
+            "title": "JavaScript",
+            "subtitle": "Ngôn ngữ đa năng",
+            "image": "https://techvccloud.mediacdn.vn/2018/11/23/js-15429579443112042672363-crop-1542957949936317424252.png"
+        },
+        {
+            "id": "cpp",
+            "title": "C++",
+            "subtitle": "Ngôn ngữ lập trình hệ thống",
+            "image": "https://cdn.tgdd.vn/2021/01/campaign/Thumb-640x360-3.png"
+        },
+        {
+            "id": "rust",
+            "title": "Rust",
+            "subtitle": "Ngôn ngữ an toàn và hiệu năng cao",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-m1jCgqbKSbqLB7dvWh9v9n-F0nVENBb1qA&s"
+        }
+    ]
+}
