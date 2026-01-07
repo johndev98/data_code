@@ -1,4 +1,6 @@
 {
+    "version": 1,
+    "type": "collection",
     "items": [
         {
             "id": "intro_dart",
