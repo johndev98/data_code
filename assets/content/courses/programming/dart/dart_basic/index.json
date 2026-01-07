@@ -1,0 +1,18 @@
+{
+    "items": [
+        {
+            "id": "intro_dart",
+            "title": "Introduction",
+            "subtitle": "Giới thiệu về Dart",
+            "image": "...",
+            "path": "content/courses/programming/dart/dart_basic/intro.json"
+        },
+        {
+            "id": "variables",
+            "title": "Variables",
+            "subtitle": "Khai báo biến và kiểu dữ liệu",
+            "image": "...",
+            "path": "content/courses/programming/dart/dart_basic/variables.json"
+        }
+    ]
+}

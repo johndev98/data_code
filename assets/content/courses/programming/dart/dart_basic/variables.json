@@ -1,0 +1,6 @@
+{
+    "id": "variables",
+    "title": "Variables in Dart",
+    "content": "Dart is a type-safe language...",
+    "code_example": "var name = 'John';"
+}
