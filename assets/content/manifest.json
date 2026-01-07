@@ -1,4 +1,4 @@
 {
     "version": 1,
-    "entry": "courses/index.json"
+    "entry": "content/courses/index.json"
 }
