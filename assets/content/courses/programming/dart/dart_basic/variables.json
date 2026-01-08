@@ -1,6 +1,36 @@
 {
-    "id": "variables",
-    "title": "Variables in Dart",
-    "content": "Dart is a type-safe language...",
-    "code_example": "var name = 'John';"
+    "title": "Biến và Kiểu dữ liệu",
+    "blocks": [
+        {
+            "type": "heading",
+            "value": "1. Khai báo biến"
+        },
+        {
+            "type": "text",
+            "value": "Trong Dart, bạn có thể khai báo biến bằng var, final hoặc const."
+        },
+        {
+            "type": "code",
+            "value": "var name = 'Flutter';\nfinal age = 5;",
+            "language": "dart"
+        },
+        {
+            "type": "image",
+            "value": "https://link-to-your-image.png",
+            "caption": "Minh họa khai báo biến"
+        },
+        {
+            "type": "heading",
+            "value": "2. Câu hỏi ôn tập"
+        },
+        {
+            "type": "quiz",
+            "question": "Biến khai báo bằng 'final' có thể thay đổi giá trị không?",
+            "options": [
+                "Có",
+                "Không"
+            ],
+            "answer": 1
+        }
+    ]
 }
