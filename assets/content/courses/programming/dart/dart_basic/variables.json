@@ -1,6 +1,6 @@
 {
     "title": "Biến và Kiểu dữ liệu",
-    "dictionary_path": "content/dictionary/languages/dart.json",
+    "dictionary_path": "languages/dart",
     "blocks": [
         {
             "type": "heading",
