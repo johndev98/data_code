@@ -11,7 +11,7 @@
         },
         {
             "type": "code",
-            "value": "var name = 'Flutter';\n\tfinal age = 5;",
+            "value": "Text(\r\n        code,\r\n        style: const TextStyle(\r\n          fontFamily: 'monospace',\r\n          fontSize: 14,\r\n          color: CupertinoColors.activeOrange,\r\n        ),\r\n      ),",
             "language": "dart"
         },
         {
