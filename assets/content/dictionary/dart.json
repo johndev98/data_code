@@ -1,0 +1,14 @@
+{
+    "final": {
+        "title": "Từ khóa final",
+        "content": "Dùng để khai báo hằng số, chỉ gán giá trị một lần duy nhất."
+    },
+    "String": {
+        "title": "Kiểu dữ liệu String",
+        "content": "Đại diện cho một chuỗi ký tự UTF-16."
+    },
+    "print": {
+        "title": "Hàm print()",
+        "content": "Dùng để hiển thị dữ liệu ra màn hình console."
+    }
+}
