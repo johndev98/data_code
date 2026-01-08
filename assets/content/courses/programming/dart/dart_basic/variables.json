@@ -12,7 +12,19 @@
         {
             "type": "code",
             "value": "var name = 'Flutter';\nfinal age = 5;",
-            "language": "dart"
+            "language": "dart",
+            "annotations": [
+                {
+                    "keyword": "final",
+                    "title": "Từ khóa final",
+                    "content": "Dùng để khai báo một hằng số. Một biến được khai báo với final chỉ có thể được gán giá trị một lần duy nhất. Sau khi gán, giá trị của nó không thể thay đổi."
+                },
+                {
+                    "keyword": "String",
+                    "title": "Kiểu dữ liệu String",
+                    "content": "String đại diện cho một chuỗi các ký tự. Trong Dart, String sử dụng bảng mã UTF-16."
+                }
+            ]
         },
         {
             "type": "image",
