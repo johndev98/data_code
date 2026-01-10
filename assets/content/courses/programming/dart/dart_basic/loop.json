@@ -37,6 +37,7 @@
         },
         {
             "type": "code",
+            "language": "dart",
             "value": "for (var i = 0; i < 5; i++) {\n  print(i);\n}",
             "keywords": [
                 "for",
