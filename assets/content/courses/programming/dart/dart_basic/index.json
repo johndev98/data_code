@@ -15,6 +15,13 @@
             "subtitle": "Khai báo biến và kiểu dữ liệu",
             "image": "...",
             "path": "content/courses/programming/dart/dart_basic/variables.json"
+        },
+        {
+            "id": "loop",
+            "title": "Loops",
+            "subtitle": "Vòng lặp trong Dart",
+            "image": "...",
+            "path": "content/courses/programming/dart/dart_basic/loop.json"
         }
     ]
 }

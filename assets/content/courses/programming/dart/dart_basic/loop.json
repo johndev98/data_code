@@ -1,0 +1,47 @@
+{
+    "title": "Vòng lặp trong Dart",
+    "dictionary_path": "languages/dart",
+    "blocks": [
+        {
+            "type": "heading",
+            "value": "1. Vòng lặp For"
+        },
+        {
+            "type": "text",
+            "value": "Vòng lặp for được dùng khi bạn biết trước số lần lặp."
+        },
+        {
+            "type": "callout",
+            "style": "tip",
+            "value": "Hãy luôn kiểm tra điều kiện dừng để tránh vòng lặp vô tận nhé!"
+        },
+        {
+            "type": "video",
+            "value": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJqZzR4ZzR4ZzR4ZzR4/l41lTjJ8yG2yG2yG2/giphy.gif",
+            "caption": "Minh họa vòng lặp hoạt động"
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "heading",
+            "value": "2. Các loại danh sách"
+        },
+        {
+            "type": "list",
+            "items": [
+                "List cố định chiều dài",
+                "List có thể thay đổi chiều dài",
+                "Duyệt list bằng for-in"
+            ]
+        },
+        {
+            "type": "code",
+            "value": "for (var i = 0; i < 5; i++) {\n  print(i);\n}",
+            "keywords": [
+                "for",
+                "print"
+            ]
+        }
+    ]
+}
