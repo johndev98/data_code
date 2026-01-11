@@ -1,48 +1,61 @@
 {
-    "title": "Vòng lặp trong Dart",
-    "dictionary_path": "content/dictionary/languages/dart.json",
+    "title": "Vòng lặp - Làm việc không mệt mỏi",
+    "dictionary_path": "languages/dart",
     "blocks": [
         {
             "type": "heading",
-            "value": "1. Vòng lặp For"
+            "value": "1. Tại sao cần vòng lặp?"
         },
         {
             "type": "text",
-            "value": "Vòng lặp for được dùng khi bạn biết trước số lần lặp."
+            "value": "Nếu bạn muốn viết chữ 'Chào bạn' 100 lần, bạn sẽ copy-paste 100 dòng code? Đừng làm thế! Vòng lặp sẽ giúp bạn làm việc đó trong 3 dòng code."
+        },
+        {
+            "type": "analogy",
+            "concept": "Vòng lặp (Loop)",
+            "value": "Nó giống như việc bạn chạy bộ quanh sân vận động. Bạn bắt đầu từ vạch xuất phát, chạy hết 1 vòng, kiểm tra xem đã đủ số vòng chưa, nếu chưa thì chạy tiếp."
+        },
+        {
+            "type": "heading",
+            "value": "2. Vòng lặp For"
+        },
+        {
+            "type": "text",
+            "value": "Dùng khi bạn biết chính xác mình muốn lặp lại bao nhiêu lần."
+        },
+        {
+            "type": "code",
+            "value": "for (var i = 1; i <= 3; i++) {\n  print('Chạy vòng thứ $i');\n}",
+            "language": "dart",
+            "keywords": [
+                "for",
+                "print",
+                "var"
+            ]
         },
         {
             "type": "callout",
-            "style": "tip",
-            "value": "Hãy luôn kiểm tra điều kiện dừng để tránh vòng lặp vô tận nhé!"
+            "style": "warning",
+            "value": "Hãy cẩn thận! Nếu điều kiện dừng luôn luôn đúng, máy tính sẽ lặp mãi mãi cho đến khi bị treo máy (Vòng lặp vô tận)."
         },
         {
-            "type": "video",
-            "value": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJqZzR4ZzR4ZzR4ZzR4/l41lTjJ8yG2yG2yG2/giphy.gif",
-            "caption": "Minh họa vòng lặp hoạt động"
+            "type": "comparison",
+            "wrong": "for (var i = 1; i > 0; i++) { ... }",
+            "right": "for (var i = 1; i <= 10; i++) { ... }",
+            "reason": "Ở ví dụ sai, i luôn lớn hơn 0 nên nó sẽ chạy mãi mãi không bao giờ dừng."
         },
         {
             "type": "divider"
         },
         {
-            "type": "heading",
-            "value": "2. Các loại danh sách"
-        },
-        {
-            "type": "list",
-            "items": [
-                "List cố định chiều dài",
-                "List có thể thay đổi chiều dài",
-                "Duyệt list bằng for-in"
-            ]
-        },
-        {
-            "type": "code",
-            "language": "dart",
-            "value": "for (var i = 0; i < 5; i++) {\n  print(i);\n}",
-            "keywords": [
-                "for",
-                "print"
-            ]
+            "type": "quiz",
+            "question": "Trong vòng lặp: for (var i = 0; i < 5; i++), đoạn code bên trong sẽ chạy bao nhiêu lần?",
+            "options": [
+                "4 lần",
+                "5 lần",
+                "6 lần"
+            ],
+            "answer": 1
         }
     ]
 }

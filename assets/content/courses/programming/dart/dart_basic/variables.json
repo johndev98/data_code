@@ -1,18 +1,57 @@
 {
-    "title": "Biến và Kiểu dữ liệu",
-    "dictionary_path": "content/dictionary/languages/dart.json",
+    "title": "Biến - Những chiếc hộp thông minh",
+    "dictionary_path": "languages/dart",
     "blocks": [
         {
             "type": "heading",
-            "value": "1. Khai báo biến"
+            "value": "1. Khái niệm về Biến"
+        },
+        {
+            "type": "analogy",
+            "concept": "Biến (Variable)",
+            "value": "Hãy tưởng tượng biến như một chiếc hộp. Bạn dán nhãn cho chiếc hộp (tên biến) và bỏ một món đồ vào trong (giá trị). Khi cần dùng, bạn chỉ cần gọi tên nhãn để lấy món đồ đó ra."
         },
         {
             "type": "text",
-            "value": "Trong Dart, bạn có thể khai báo biến bằng var, final hoặc const."
+            "value": "Trong Dart, chúng ta dùng từ khóa 'var' để tạo ra một chiếc hộp."
         },
         {
             "type": "code",
-            "value": "var name = 'Flutter';\nfinal age = 5;",
+            "value": "var hop_qua = 'Gấu bông';\nprint(hop_qua); // Kết quả: Gấu bông",
+            "language": "dart",
+            "keywords": [
+                "var",
+                "print"
+            ]
+        },
+        {
+            "type": "heading",
+            "value": "2. Quy tắc đặt tên (Quan trọng)"
+        },
+        {
+            "type": "text",
+            "value": "Máy tính rất khắt khe trong việc đặt tên nhãn cho chiếc hộp."
+        },
+        {
+            "type": "comparison",
+            "wrong": "var 1st_name = 'John';",
+            "right": "var firstName = 'John';",
+            "reason": "Tên biến không được bắt đầu bằng số và nên dùng kiểu lạc đà (camelCase)."
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "heading",
+            "value": "3. Hằng số - Những chiếc hộp bị khóa"
+        },
+        {
+            "type": "text",
+            "value": "Nếu bạn muốn món đồ trong hộp không bao giờ bị thay đổi, hãy dùng 'final'."
+        },
+        {
+            "type": "code",
+            "value": "final String ngay_sinh = '01/01/2000';\n// ngay_sinh = '02/02/2000'; // LỖI! Không thể đổi ngày sinh",
             "language": "dart",
             "keywords": [
                 "final",
@@ -20,22 +59,14 @@
             ]
         },
         {
-            "type": "image",
-            "value": "https://link-to-your-image.png",
-            "caption": "Minh họa khai báo biến"
-        },
-        {
-            "type": "heading",
-            "value": "2. Câu hỏi ôn tập"
-        },
-        {
             "type": "quiz",
-            "question": "Biến khai báo bằng 'final' có thể thay đổi giá trị không?",
+            "question": "Từ khóa nào giúp tạo ra một biến không thể thay đổi giá trị?",
             "options": [
-                "Có",
-                "Không"
+                "var",
+                "dynamic",
+                "final"
             ],
-            "answer": 1
+            "answer": 2
         }
     ]
 }
