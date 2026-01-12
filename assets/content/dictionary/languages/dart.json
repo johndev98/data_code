@@ -1,14 +1,338 @@
 {
+    "abstract": {
+        "title": "Từ khóa abstract",
+        "content": "Giống như bản thiết kế chung chung của ngôi nhà - bạn chỉ vẽ ra ý tưởng nhưng chưa xây thật. Class abstract không thể tạo object trực tiếp được, phải có class con kế thừa và hoàn thiện nó. Ví dụ: abstract class Animal {} - bạn không thể tạo 'con vật nói chung', phải tạo 'con chó' hay 'con mèo' cụ thể."
+    },
+    "as": {
+        "title": "Toán tử as",
+        "content": "Giống như nói 'Này, tôi chắc chắn cái này là kiểu X đấy!'. Dùng để ép kiểu khi bạn biết chắc một biến là kiểu gì. Ví dụ: var dog = animal as Dog; - bạn khẳng định 'animal này chắc chắn là Dog'. Nếu sai sẽ bị lỗi ngay."
+    },
+    "assert": {
+        "title": "Câu lệnh assert",
+        "content": "Như kiểm tra lại công việc trước khi nộp - chỉ hoạt động khi đang code (debug mode). Dùng để đảm bảo điều kiện phải đúng, nếu sai chương trình dừng và báo lỗi. Ví dụ: assert(age >= 0) - kiểm tra tuổi không được âm. Khi chạy app thật (release) thì assert bị bỏ qua."
+    },
+    "async": {
+        "title": "Từ khóa async",
+        "content": "Đánh dấu hàm 'làm việc không đồng bộ' - giống như gọi món ăn rồi đi làm việc khác, đợi có chuông báo mới lấy. Hàm async luôn trả về Future và có thể dùng await bên trong. Ví dụ: Future<String> getData() async { ... } - hàm này sẽ làm việc ngầm không block code khác."
+    },
+    "await": {
+        "title": "Từ khóa await",
+        "content": "Giống như đứng chờ món ăn ở quầy - tạm dừng lại cho đến khi có kết quả. Chỉ dùng được trong hàm async. Ví dụ: var data = await getData(); - đợi getData() xong mới chạy tiếp. Trong lúc chờ, code khác vẫn chạy bình thường."
+    },
+    "base": {
+        "title": "Modifier base",
+        "content": "Từ Dart 3.0 - giống như nói 'class này chỉ cho phép con cháu ruột thịt thôi'. Class base chỉ có thể extends (kế thừa), không được implements (giả mạo). Đảm bảo mọi object con đều có đầy đủ tính năng của cha. Ví dụ: base class Vehicle {} - bạn phải kế thừa thật chứ không làm giả được."
+    },
+    "bool": {
+        "title": "Kiểu dữ liệu bool",
+        "content": "Kiểu 'đúng hoặc sai' - đơn giản nhất trong lập trình. Chỉ có 2 giá trị: true (đúng) hoặc false (sai). Dùng cho mọi câu hỏi có/không, bật/tắt. Ví dụ: bool isStudent = true; - đánh dấu là học sinh."
+    },
+    "break": {
+        "title": "Câu lệnh break",
+        "content": "Giống như thoát khỏi vòng lặp ngay lập tức - 'đủ rồi, dừng lại!'. Dùng trong for, while, do-while hoặc switch để thoát ra khỏi vòng lặp/case ngay khi gặp. Ví dụ: khi tìm thấy kết quả trong vòng lặp thì break để không lặp tiếp nữa."
+    },
+    "case": {
+        "title": "Từ khóa case",
+        "content": "Dùng trong switch - giống như các ngăn tủ khác nhau, mỗi case là một trường hợp cụ thể. Ví dụ: case 1: print('Một'); break; - nếu giá trị là 1 thì in ra 'Một'. Nhớ thêm break để không chạy xuống case dưới."
+    },
+    "catch": {
+        "title": "Từ khóa catch",
+        "content": "Giống như dùng lưới bắt bóng - bắt lỗi (exception) khi có vấn đề xảy ra. Luôn đi cùng try. Ví dụ: try { ... } catch (e) { print('Lỗi: $e'); } - nếu có lỗi thì bắt lại và xử lý thay vì để app crash."
+    },
+    "class": {
+        "title": "Từ khóa class",
+        "content": "Khuôn mẫu để tạo ra object - giống như bản thiết kế nhà, muốn bao nhiêu căn cũng được. Class chứa thuộc tính (dữ liệu) và phương thức (hành động). Ví dụ: class Dog { String name; void bark() {...} } - tạo khuôn để làm ra nhiều con chó khác nhau."
+    },
+    "const": {
+        "title": "Từ khóa const",
+        "content": "Hằng số 'cứng' nhất - giá trị phải biết ngay từ lúc viết code. Tiết kiệm bộ nhớ vì Dart tái sử dụng object giống nhau. Ví dụ: const pi = 3.14; hoặc const Color red = Color(0xFF0000); - giá trị không bao giờ đổi và được định sẵn."
+    },
+    "continue": {
+        "title": "Câu lệnh continue",
+        "content": "Giống như bỏ qua bài tập này và nhảy sang bài tiếp theo - bỏ qua phần còn lại của lần lặp hiện tại và chạy lần lặp mới. Ví dụ: trong vòng lặp 1-10, gặp số 5 thì continue để không xử lý số 5, nhảy luôn sang số 6."
+    },
+    "covariant": {
+        "title": "Từ khóa covariant",
+        "content": "Cho phép class con dùng kiểu cụ thể hơn khi ghi đè method - ví dụ: class cha nhận Animal, class con có thể ghi đè để chỉ nhận Dog. Hơi nâng cao, thường ít dùng. Giúp code linh hoạt hơn khi kế thừa."
+    },
+    "default": {
+        "title": "Từ khóa default",
+        "content": "Trường hợp 'còn lại' trong switch - giống như ngăn 'linh tinh' trong tủ. Khi không case nào khớp thì chạy vào default. Ví dụ: default: print('Không xác định'); - xử lý các trường hợp ngoài dự kiến."
+    },
+    "deferred": {
+        "title": "Từ khóa deferred",
+        "content": "Tải thư viện kiểu 'lười' - không tải ngay khi mở app mà chờ đến khi cần thật sự. Giúp app mở nhanh hơn. Ví dụ: import 'package:big_library.dart' deferred as big; - chỉ tải khi gọi big.loadLibrary()."
+    },
+    "do": {
+        "title": "Vòng lặp do-while",
+        "content": "Vòng lặp 'làm trước hỏi sau' - chắc chắn chạy ít nhất 1 lần rồi mới kiểm tra điều kiện. Ngược với while. Ví dụ: do { print('Xin chào'); } while (false); - vẫn in 'Xin chào' 1 lần dù điều kiện là false."
+    },
+    "double": {
+        "title": "Kiểu dữ liệu double",
+        "content": "Số thực - dùng cho số có dấu phẩy như 3.14, 2.5, 0.001. Chính xác 64-bit (IEEE 754). Dùng cho tính toán khoa học, tài chính, hay bất kỳ thứ gì cần số lẻ. Ví dụ: double price = 19.99;"
+    },
+    "dynamic": {
+        "title": "Kiểu dynamic",
+        "content": "Kiểu 'tự do nhất' - biến có thể chứa bất cứ thứ gì và đổi kiểu bất cứ lúc nào. Dart không kiểm tra kiểu cho biến dynamic. Dùng khi thực sự không biết trước kiểu dữ liệu. Ví dụ: dynamic anything = 5; anything = 'text'; - được phép nhưng dễ lỗi."
+    },
+    "else": {
+        "title": "Từ khóa else",
+        "content": "Đi cùng if - nghĩa là 'nếu không thì'. Chạy khi điều kiện if là false. Ví dụ: if (age >= 18) { print('Trưởng thành'); } else { print('Vị thành niên'); } - một trong hai khối chắc chắn chạy."
+    },
+    "enum": {
+        "title": "Từ khóa enum",
+        "content": "Tập hợp các lựa chọn cố định - giống menu có sẵn, chọn 1 trong số đó. Giúp code rõ ràng và tránh lỗi đánh máy. Ví dụ: enum Weather { sunny, rainy, cloudy } - chỉ có 3 thời tiết này thôi, không có gì khác."
+    },
+    "export": {
+        "title": "Từ khóa export",
+        "content": "Chia sẻ code cho file khác dùng - giống như xuất khẩu hàng hóa. Các file khác có thể import để sử dụng những thứ bạn export. Thường dùng khi tạo thư viện/package cho người khác dùng."
+    },
+    "extends": {
+        "title": "Từ khóa extends",
+        "content": "Kế thừa từ class cha - con được thừa hưởng mọi thứ của cha. Giống như con thừa hưởng tài sản và kỹ năng từ bố mẹ. Ví dụ: class Dog extends Animal - Dog có tất cả tính năng của Animal, cộng thêm tính năng riêng của Dog."
+    },
+    "extension": {
+        "title": "Từ khóa extension",
+        "content": "Thêm tính năng mới cho kiểu dữ liệu có sẵn mà không cần sửa code gốc - giống như lắp thêm phụ kiện cho điện thoại. Ví dụ: extension on String { bool get isEmail => contains('@'); } - thêm method kiểm tra email cho String."
+    },
+    "external": {
+        "title": "Từ khóa external",
+        "content": "Đánh dấu function/method được viết bằng ngôn ngữ khác (C++, Java, JS...) chứ không phải Dart. Thường dùng khi gọi code native. Hơi nâng cao, ít gặp trong code thông thường."
+    },
+    "factory": {
+        "title": "Constructor factory",
+        "content": "Constructor đặc biệt - có thể trả về object cũ từ cache thay vì luôn tạo mới. Tiết kiệm bộ nhớ. Ví dụ: factory User.fromCache(id) { return cache[id] ?? User._create(id); } - kiểm tra cache trước khi tạo mới."
+    },
+    "false": {
+        "title": "Giá trị false",
+        "content": "Giá trị boolean nghĩa là 'sai', 'không', 'tắt'. Đối lập với true. Dùng trong mọi điều kiện logic. Ví dụ: bool isSunny = false; - trời không nắng."
+    },
     "final": {
         "title": "Từ khóa final",
-        "content": "Dùng để khai báo hằng số, chỉ gán giá trị một lần duy nhất."
+        "content": "Biến chỉ gán được 1 lần - một khi đã gán thì không đổi được nữa. Khác const là giá trị có thể tính lúc chạy app. Ví dụ: final now = DateTime.now(); - giá trị được tính lúc chạy, nhưng sau đó không đổi."
     },
-    "String": {
-        "title": "Kiểu dữ liệu String",
-        "content": "Đại diện cho một chuỗi ký tự UTF-16."
+    "finally": {
+        "title": "Từ khóa finally",
+        "content": "Khối code 'dù thế nào cũng chạy' - dù có lỗi hay không, có return hay không thì finally vẫn chạy. Dùng để dọn dẹp tài nguyên. Ví dụ: try {...} catch {...} finally { file.close(); } - đảm bảo đóng file trong mọi trường hợp."
+    },
+    "for": {
+        "title": "Vòng lặp for",
+        "content": "Vòng lặp phổ biến nhất - lặp đi lặp lại một công việc. Có nhiều kiểu: for truyền thống (i = 0; i < 10; i++), for-in (for item in list). Ví dụ: for (var i = 0; i < 5; i++) { print(i); } - in số từ 0 đến 4."
+    },
+    "Function": {
+        "title": "Kiểu Function",
+        "content": "Đại diện cho một hàm - trong Dart hàm cũng là object, có thể gán cho biến, truyền vào tham số. Ví dụ: Function sayHello = () => print('Hi'); - gán hàm cho biến rồi gọi sayHello();"
+    },
+    "Future": {
+        "title": "Kiểu Future",
+        "content": "Đại diện cho giá trị 'sẽ có trong tương lai' - giống như phiếu hẹn lấy món ăn. Dùng cho xử lý bất đồng bộ. Ví dụ: Future<String> getData() async {...} - hàm sẽ trả về String nhưng phải chờ một chút."
+    },
+    "get": {
+        "title": "Từ khóa get",
+        "content": "Tạo getter - thuộc tính chỉ đọc hoặc tính toán từ dữ liệu khác. Gọi như thuộc tính thường (không có dấu ngoặc). Ví dụ: int get age => DateTime.now().year - birthYear; - tính tuổi tự động mỗi khi gọi."
+    },
+    "hide": {
+        "title": "Từ khóa hide",
+        "content": "Ẩn những thứ không muốn import - giống như 'tôi lấy hết trừ cái này'. Dùng khi import thư viện nhưng không muốn xung đột tên. Ví dụ: import 'package:lib.dart' hide Function1; - import tất cả trừ Function1."
+    },
+    "identical": {
+        "title": "Hàm identical()",
+        "content": "Kiểm tra xem 2 biến có trỏ đến CHÍNH XÁC cùng 1 object không - không phải giống nhau mà phải là cùng 1 cái. Ví dụ: var a = [1,2]; var b = a; identical(a,b) = true (cùng 1 list). Khác với == chỉ so giá trị."
+    },
+    "if": {
+        "title": "Câu lệnh if",
+        "content": "Câu điều kiện cơ bản nhất - 'nếu... thì...'. Kiểm tra điều kiện, nếu đúng thì chạy khối code bên trong. Ví dụ: if (age >= 18) { print('Được vào'); } - chỉ in ra khi tuổi đủ 18."
+    },
+    "implements": {
+        "title": "Từ khóa implements",
+        "content": "Cam kết thực hiện theo 'hợp đồng' của interface - phải có đầy đủ method/property mà interface yêu cầu. Khác extends là không thừa kế code, phải tự viết lại tất cả. Ví dụ: class Dog implements Animal - Dog phải tự viết tất cả method của Animal."
+    },
+    "import": {
+        "title": "Từ khóa import",
+        "content": "Nhập thư viện hoặc file khác vào để dùng - giống như mượn đồ của người khác. Ví dụ: import 'dart:math'; - nhập thư viện toán học để dùng các hàm sqrt, pow... hoặc import 'package:flutter/material.dart'; để dùng Flutter."
+    },
+    "in": {
+        "title": "Từ khóa in",
+        "content": "Dùng trong for-in để duyệt qua từng phần tử - giống như 'với mỗi... trong...'. Ví dụ: for (var fruit in fruits) { print(fruit); } - lấy lần lượt từng trái cây trong danh sách và in ra."
+    },
+    "int": {
+        "title": "Kiểu dữ liệu int",
+        "content": "Số nguyên - không có dấu phẩy thập phân. Dùng cho đếm số lượng, tuổi, index... Ví dụ: int age = 25; int count = 100; Trên máy tính có thể lớn đến 9,223,372,036,854,775,807 (64-bit)."
+    },
+    "interface": {
+        "title": "Modifier interface",
+        "content": "Từ Dart 3.0 - class chỉ được phép implements, không được extends. Giống như 'hợp đồng' phải tuân theo, nhưng không cho thừa kế code. Ví dụ: interface class Repository {} - các class khác phải tự viết lại tất cả."
+    },
+    "is": {
+        "title": "Toán tử is",
+        "content": "Kiểm tra xem biến có phải kiểu nào đó không - trả về true/false. An toàn hơn as vì không gây lỗi. Ví dụ: if (animal is Dog) { animal.bark(); } - kiểm tra trước khi dùng, tránh lỗi."
+    },
+    "Iterable": {
+        "title": "Kiểu Iterable",
+        "content": "Kiểu cha của List, Set - những thứ có thể duyệt qua từng phần tử. Cung cấp các method như map, where, forEach... Ví dụ: Iterable<int> numbers = [1, 2, 3]; - có thể lặp qua từng số."
+    },
+    "late": {
+        "title": "Từ khóa late",
+        "content": "Hứa sẽ gán giá trị sau - dùng khi chưa có giá trị ngay lúc khai báo nhưng chắc chắn sẽ gán trước khi dùng. Ví dụ: late String userName; - khai báo trước, gán sau khi người dùng đăng nhập. Nếu dùng trước khi gán sẽ bị lỗi."
+    },
+    "library": {
+        "title": "Từ khóa library",
+        "content": "Đặt tên cho thư viện của bạn - giúp tổ chức code thành module. Ít dùng trong code thông thường. Ví dụ: library my_utils; - đặt tên cho file chứa các hàm tiện ích."
+    },
+    "List": {
+        "title": "Kiểu dữ liệu List",
+        "content": "Danh sách có thứ tự - giống mảng trong các ngôn ngữ khác. Truy xuất phần tử bằng số thứ tự (index) từ 0. Ví dụ: List<String> fruits = ['Táo', 'Chuối', 'Cam']; fruits[0] = 'Táo'."
+    },
+    "Map": {
+        "title": "Kiểu dữ liệu Map",
+        "content": "Từ điển key-value - lưu cặp 'chìa khóa : giá trị'. Tìm nhanh bằng key. Ví dụ: Map<String, int> ages = {'Nam': 25, 'Lan': 23}; ages['Nam'] = 25."
+    },
+    "mixin": {
+        "title": "Từ khóa mixin",
+        "content": "Gói tính năng để 'trộn' vào nhiều class khác nhau - giống như addon/plugin. Giải quyết vấn đề đa kế thừa. Ví dụ: mixin CanFly { void fly() {...} } rồi class Bird with CanFly - Bird có thể bay mà không cần kế thừa."
+    },
+    "new": {
+        "title": "Từ khóa new",
+        "content": "Tạo object mới từ class - nhưng từ Dart 2 trở đi là TÙY CHỌN, không bắt buộc phải viết. Ví dụ: var dog = Dog(); hoặc var dog = new Dog(); - cả hai đều đúng, người ta thường bỏ 'new'."
+    },
+    "null": {
+        "title": "Giá trị null",
+        "content": "Giá trị 'không có gì' - biến chưa được gán hoặc không tồn tại. Chỉ dùng được với biến nullable (có dấu ?). Ví dụ: String? name = null; - name có thể là String hoặc null. Nhưng String name = null; - SAI vì String không cho phép null."
+    },
+    "num": {
+        "title": "Kiểu dữ liệu num",
+        "content": "Kiểu cha của int và double - dùng khi muốn nhận cả số nguyên lẫn số thực. Ví dụ: num calculate(num a, num b) => a + b; - nhận cả int và double."
+    },
+    "Object": {
+        "title": "Class Object",
+        "content": "Tổ tiên của mọi class trong Dart - mọi thứ đều là Object (trừ null). Cung cấp các method cơ bản: toString(), hashCode, runtimeType... Ví dụ: Object anything = 'text'; anything = 123; - Object chứa được mọi thứ."
+    },
+    "on": {
+        "title": "Từ khóa on",
+        "content": "Chỉ định kiểu ngoại lệ cụ thể cần bắt, hoặc giới hạn mixin chỉ dùng với kiểu nhất định. Ví dụ: on FormatException catch (e) {...} - chỉ bắt lỗi định dạng. Hoặc mixin CanSwim on Animal - CanSwim chỉ dùng với Animal."
+    },
+    "operator": {
+        "title": "Từ khóa operator",
+        "content": "Định nghĩa lại toán tử (+, -, *, /, ==...) cho class của bạn. Ví dụ: class Point { int x, y; Point operator +(Point other) => Point(x + other.x, y + other.y); } - giờ có thể cộng 2 Point bằng dấu +."
+    },
+    "part": {
+        "title": "Từ khóa part",
+        "content": "Chia 1 thư viện lớn thành nhiều file nhỏ - file chính dùng 'part', file con dùng 'part of'. Giúp tổ chức code dễ hơn. Ví dụ: part 'user_model.dart'; trong file chính, và part of 'main.dart'; trong file con."
     },
     "print": {
         "title": "Hàm print()",
-        "content": "Dùng để hiển thị dữ liệu ra màn hình console."
+        "content": "In ra console/terminal - công cụ debug đơn giản nhất. Tự động chuyển mọi thứ thành text. Ví dụ: print('Hello'); print(123); print([1,2,3]); - in ra màn hình console để xem kết quả."
+    },
+    "required": {
+        "title": "Từ khóa required",
+        "content": "Đánh dấu tham số BẮT BUỘC phải truyền - không cho phép bỏ qua. Dùng với named parameter. Ví dụ: User({required String name, int? age}) - phải truyền name, age thì tùy ý."
+    },
+    "rethrow": {
+        "title": "Từ khóa rethrow",
+        "content": "Ném lại ngoại lệ đã bắt - giống như 'tôi xử lý 1 phần rồi, phần còn lại để người khác lo'. Giữ nguyên thông tin lỗi gốc. Ví dụ: catch (e) { log(e); rethrow; } - ghi log rồi ném tiếp cho hàm cha xử lý."
+    },
+    "return": {
+        "title": "Câu lệnh return",
+        "content": "Trả kết quả về và kết thúc hàm - giống như 'đây là câu trả lời, xong!'. Ví dụ: int add(int a, int b) { return a + b; } - trả về tổng. Code sau return không chạy nữa."
+    },
+    "Runes": {
+        "title": "Kiểu dữ liệu Runes",
+        "content": "Đại diện Unicode của String - dùng khi làm việc với emoji, ký tự đặc biệt. Ví dụ: Runes smile = Runes('\\u{1F600}'); print(String.fromCharCodes(smile)); - in emoji cười 😀."
+    },
+    "sealed": {
+        "title": "Từ khóa sealed",
+        "content": "Từ Dart 3.0 - class chỉ được kế thừa trong cùng file/thư viện. Giúp compiler kiểm tra đã xử lý hết trường hợp chưa (exhaustive check). Ví dụ: sealed class Result - chỉ Success và Error trong cùng file được extends."
+    },
+    "Set": {
+        "title": "Kiểu dữ liệu Set",
+        "content": "Tập hợp không trùng lặp - mỗi phần tử chỉ xuất hiện 1 lần, không có thứ tự. Kiểm tra phần tử có tồn tại cực nhanh. Ví dụ: Set<int> numbers = {1, 2, 3, 2}; - kết quả chỉ có {1, 2, 3}."
+    },
+    "set": {
+        "title": "Từ khóa set",
+        "content": "Tạo setter - hàm gán giá trị có thể kiểm tra hoặc xử lý trước. Gọi như gán thuộc tính thường (=). Ví dụ: set age(int value) { if (value >= 0) _age = value; } - chỉ gán khi tuổi không âm."
+    },
+    "show": {
+        "title": "Từ khóa show",
+        "content": "Chỉ import những thứ cần dùng thôi - giống như 'tôi chỉ lấy cái này thôi'. Ngược với hide. Ví dụ: import 'package:lib.dart' show Function1, Function2; - chỉ lấy 2 hàm này, bỏ qua phần còn lại."
+    },
+    "static": {
+        "title": "Từ khóa static",
+        "content": "Thuộc về class chứ không thuộc object - dùng chung cho tất cả. Gọi bằng tên class, không cần tạo object. Ví dụ: class Math { static double pi = 3.14; } - gọi Math.pi, không cần new Math()."
+    },
+    "Stream": {
+        "title": "Kiểu Stream",
+        "content": "Dòng dữ liệu liên tục - giống như xem video streaming, dữ liệu đến từng phần theo thời gian. Dùng cho realtime data, socket, event... Ví dụ: Stream<int> countStream() async* { for (int i = 0; i < 5; i++) { yield i; } }"
+    },
+    "String": {
+        "title": "Kiểu dữ liệu String",
+        "content": "Chuỗi ký tự - chữ, từ, câu, đoạn văn... Dùng dấu nháy đơn hoặc kép. Hỗ trợ emoji và Unicode. Ví dụ: String name = 'Nguyễn Văn A'; String message = \"Xin chào!\";"
+    },
+    "super": {
+        "title": "Từ khóa super",
+        "content": "Gọi đến class cha - dùng để truy xuất method/thuộc tính của cha khi con đã ghi đè. Ví dụ: super.method(); hoặc super() trong constructor để gọi constructor cha trước."
+    },
+    "switch": {
+        "title": "Câu lệnh switch",
+        "content": "Rẽ nhánh nhiều trường hợp - thay vì viết nhiều if-else. Kiểm tra 1 giá trị với nhiều case. Ví dụ: switch(day) { case 'Mon': print('Thứ 2'); break; case 'Tue': print('Thứ 3'); break; }"
+    },
+    "Symbol": {
+        "title": "Kiểu dữ liệu Symbol",
+        "content": "Đại diện cho tên (identifier) trong code - dùng cho reflection/mirror. Khá nâng cao, ít dùng trong code thông thường. Ví dụ: Symbol sym = #myFunction; - lưu tên hàm dưới dạng symbol."
+    },
+    "sync": {
+        "title": "Từ khóa sync*",
+        "content": "Tạo generator đồng bộ - hàm sinh ra nhiều giá trị theo yêu cầu, tiết kiệm bộ nhớ. Trả về Iterable. Ví dụ: Iterable<int> count(int n) sync* { for (int i = 0; i < n; i++) yield i; } - sinh số từ 0 đến n-1."
+    },
+    "this": {
+        "title": "Từ khóa this",
+        "content": "Đại diện cho object hiện tại - dùng để phân biệt thuộc tính class với tham số cùng tên. Ví dụ: class User { String name; User(String name) { this.name = name; } } - this.name là thuộc tính, name là tham số."
+    },
+    "throw": {
+        "title": "Từ khóa throw",
+        "content": "Ném lỗi/ngoại lệ - báo hiệu có vấn đề xảy ra. Dừng flow bình thường, chuyển sang xử lý lỗi. Ví dụ: if (age < 0) throw Exception('Tuổi không được âm'); - ném lỗi khi dữ liệu không hợp lệ."
+    },
+    "true": {
+        "title": "Giá trị true",
+        "content": "Giá trị boolean nghĩa là 'đúng', 'có', 'bật'. Đối lập với false. Dùng trong mọi điều kiện logic. Ví dụ: bool isLoggedIn = true; - đánh dấu đã đăng nhập."
+    },
+    "try": {
+        "title": "Khối try",
+        "content": "Thử chạy code có thể bị lỗi - nếu lỗi thì catch bắt, không lỗi thì chạy bình thường. Luôn đi với catch/finally. Ví dụ: try { int.parse('abc'); } catch (e) { print('Lỗi chuyển đổi'); } - bắt lỗi parse."
+    },
+    "typedef": {
+        "title": "Từ khóa typedef",
+        "content": "Đặt tên gọn cho kiểu Function phức tạp - giống như đặt biệt danh. Giúp code dễ đọc và tái sử dụng. Ví dụ: typedef Compare = int Function(int a, int b); - giờ dùng Compare thay vì viết dài."
+    },
+    "var": {
+        "title": "Từ khóa var",
+        "content": "Khai báo biến để Dart tự đoán kiểu - nhìn giá trị gán là biết kiểu gì. Tiện lợi nhưng kiểu không đổi được sau khi gán. Ví dụ: var name = 'Nam'; - Dart biết name là String, không thể gán số sau này."
+    },
+    "void": {
+        "title": "Kiểu void",
+        "content": "Hàm không trả về gì - chỉ thực hiện hành động rồi xong. Không có return hoặc return; (không giá trị). Ví dụ: void printHello() { print('Hello'); } - in ra rồi xong, không trả về gì."
+    },
+    "when": {
+        "title": "Từ khóa when",
+        "content": "Thêm điều kiện bổ sung trong pattern matching (Dart 3.0+) - giống như 'khi mà'. Ví dụ: case int n when n > 0: print('Số dương'); - chỉ khớp khi là int VÀ lớn hơn 0."
+    },
+    "while": {
+        "title": "Vòng lặp while",
+        "content": "Lặp khi điều kiện còn đúng - kiểm tra điều kiện trước rồi mới chạy. Có thể không chạy lần nào nếu điều kiện sai ngay từ đầu. Ví dụ: while (count < 10) { count++; } - lặp đến khi count = 10."
+    },
+    "with": {
+        "title": "Từ khóa with",
+        "content": "Áp dụng mixin vào class - trộn thêm tính năng từ mixin. Có thể dùng nhiều mixin cùng lúc. Ví dụ: class Bird extends Animal with CanFly, CanSing - Bird có cả khả năng bay và hát."
+    },
+    "yield": {
+        "title": "Từ khóa yield",
+        "content": "Phát sinh giá trị trong generator (sync* hoặc async*) - giống như return nhưng không kết thúc hàm, tiếp tục sinh giá trị tiếp theo. Ví dụ: sync* { yield 1; yield 2; yield 3; } - sinh ra 1, 2, 3 từng cái một."
+    },
+    "@deprecated": {
+        "title": "Annotation @deprecated",
+        "content": "Đánh dấu code cũ không nên dùng nữa - cảnh báo người dùng sắp bỏ. Compiler sẽ warning khi dùng. Ví dụ: @deprecated void oldFunction() {...} - khuyên dùng hàm mới thay thế."
+    },
+    "@override": {
+        "title": "Annotation @override",
+        "content": "Đánh dấu đang ghi đè method của cha - giúp compiler kiểm tra có method cha để ghi đè không. Nếu không có sẽ báo lỗi. Ví dụ: @override String toString() {...} - ghi đè method toString của Object."
     }
 }
