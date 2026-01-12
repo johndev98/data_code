@@ -1,7 +1,31 @@
 {
+    "@deprecated": {
+        "title": "Annotation @deprecated",
+        "content": "Đánh dấu code cũ không nên dùng nữa - cảnh báo người dùng sắp bỏ. Compiler sẽ warning khi dùng. Ví dụ: @deprecated void oldFunction() {...} - khuyên dùng hàm mới thay thế."
+    },
+    "@override": {
+        "title": "Annotation @override",
+        "content": "Đánh dấu đang ghi đè method của cha - giúp compiler kiểm tra có method cha để ghi đè không. Nếu không có sẽ báo lỗi. Ví dụ: @override String toString() {...} - ghi đè method toString của Object."
+    },
     "abstract": {
         "title": "Từ khóa abstract",
         "content": "Giống như bản thiết kế chung chung của ngôi nhà - bạn chỉ vẽ ra ý tưởng nhưng chưa xây thật. Class abstract không thể tạo object trực tiếp được, phải có class con kế thừa và hoàn thiện nó. Ví dụ: abstract class Animal {} - bạn không thể tạo 'con vật nói chung', phải tạo 'con chó' hay 'con mèo' cụ thể."
+    },
+    "add": {
+        "title": "Method add()",
+        "content": "Thêm phần tử vào List hoặc Set - giống như bỏ thêm đồ vào giỏ. Ví dụ: List<String> fruits = ['Táo']; fruits.add('Chuối'); - giờ có ['Táo', 'Chuối']. Với Set thì add phần tử trùng sẽ bị bỏ qua."
+    },
+    "addAll": {
+        "title": "Method addAll()",
+        "content": "Thêm nhiều phần tử cùng lúc vào List/Set - giống như đổ cả rổ vào giỏ. Ví dụ: fruits.addAll(['Cam', 'Xoài']); - thêm cùng lúc 2 trái. Nhanh hơn add từng cái một."
+    },
+    "clear": {
+        "title": "Method clear()",
+        "content": "Xóa sạch tất cả phần tử trong List/Set/Map - giống như đổ hết ra khỏi giỏ. Ví dụ: fruits.clear(); - giờ fruits = [] rỗng không. Dùng khi muốn reset về trạng thái ban đầu."
+    },
+    "contains": {
+        "title": "Method contains()",
+        "content": "Kiểm tra có phần tử trong List/Set/String hay không - trả về true/false. Giống như hỏi 'có cái này trong đó không?'. Ví dụ: fruits.contains('Táo') → true nếu có táo. Hoặc 'Hello'.contains('ell') → true."
     },
     "as": {
         "title": "Toán tử as",
@@ -175,6 +199,10 @@
         "title": "Từ khóa late",
         "content": "Hứa sẽ gán giá trị sau - dùng khi chưa có giá trị ngay lúc khai báo nhưng chắc chắn sẽ gán trước khi dùng. Ví dụ: late String userName; - khai báo trước, gán sau khi người dùng đăng nhập. Nếu dùng trước khi gán sẽ bị lỗi."
     },
+    "length": {
+        "title": "Property length",
+        "content": "Cho biết số lượng phần tử trong List/Set/Map hoặc số ký tự trong String - giống như đếm có bao nhiêu cái. Ví dụ: ['Táo', 'Chuối'].length → 2. Hoặc 'Hello'.length → 5 ký tự."
+    },
     "library": {
         "title": "Từ khóa library",
         "content": "Đặt tên cho thư viện của bạn - giúp tổ chức code thành module. Ít dùng trong code thông thường. Ví dụ: library my_utils; - đặt tên cho file chứa các hàm tiện ích."
@@ -226,6 +254,14 @@
     "required": {
         "title": "Từ khóa required",
         "content": "Đánh dấu tham số BẮT BUỘC phải truyền - không cho phép bỏ qua. Dùng với named parameter. Ví dụ: User({required String name, int? age}) - phải truyền name, age thì tùy ý."
+    },
+    "remove": {
+        "title": "Method remove()",
+        "content": "Xóa phần tử khỏi List/Set - tìm và xóa phần tử đầu tiên trùng khớp. Trả về true nếu xóa thành công, false nếu không tìm thấy. Ví dụ: fruits.remove('Táo'); - xóa táo ra khỏi danh sách. Với Map dùng để xóa theo key."
+    },
+    "removeAt": {
+        "title": "Method removeAt()",
+        "content": "Xóa phần tử tại vị trí chỉ định trong List - xóa theo số thứ tự (index). Ví dụ: fruits.removeAt(0); - xóa phần tử đầu tiên. Nếu index vượt quá giới hạn sẽ bị lỗi."
     },
     "rethrow": {
         "title": "Từ khóa rethrow",
@@ -326,13 +362,5 @@
     "yield": {
         "title": "Từ khóa yield",
         "content": "Phát sinh giá trị trong generator (sync* hoặc async*) - giống như return nhưng không kết thúc hàm, tiếp tục sinh giá trị tiếp theo. Ví dụ: sync* { yield 1; yield 2; yield 3; } - sinh ra 1, 2, 3 từng cái một."
-    },
-    "@deprecated": {
-        "title": "Annotation @deprecated",
-        "content": "Đánh dấu code cũ không nên dùng nữa - cảnh báo người dùng sắp bỏ. Compiler sẽ warning khi dùng. Ví dụ: @deprecated void oldFunction() {...} - khuyên dùng hàm mới thay thế."
-    },
-    "@override": {
-        "title": "Annotation @override",
-        "content": "Đánh dấu đang ghi đè method của cha - giúp compiler kiểm tra có method cha để ghi đè không. Nếu không có sẽ báo lỗi. Ví dụ: @override String toString() {...} - ghi đè method toString của Object."
     }
 }
