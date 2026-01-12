@@ -1,6 +1,6 @@
 {
     "title": "Biến - Những chiếc hộp thông minh",
-    "dictionary_path": "languages/dart",
+    "dictionary_path": "content/dictionary/languages/dart.json",
     "blocks": [
         {
             "type": "heading",

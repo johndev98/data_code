@@ -1,6 +1,6 @@
 {
     "title": "Chào mừng bạn đến với Dart",
-    "dictionary_path": "languages/dart",
+    "dictionary_path": "content/dictionary/languages/dart.json",
     "blocks": [
         { "type": "heading", "value": "1. Lập trình là gì?" },
         { "type": "text", "value": "Hãy tưởng tượng bạn đang dạy một chú robot cách pha cà phê. Chú robot này rất thông minh nhưng chỉ hiểu những lệnh cực kỳ chi tiết. Lập trình chính là việc bạn viết ra danh sách các lệnh đó." },
