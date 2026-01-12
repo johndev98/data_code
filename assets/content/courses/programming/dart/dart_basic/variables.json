@@ -1,72 +1,93 @@
 {
-    "title": "Biến - Những chiếc hộp thông minh",
     "dictionary_path": "content/dictionary/languages/dart.json",
     "blocks": [
         {
             "type": "heading",
-            "value": "1. Khái niệm về Biến"
-        },
-        {
-            "type": "analogy",
-            "concept": "Biến (Variable)",
-            "value": "Hãy tưởng tượng biến như một chiếc hộp. Bạn dán nhãn cho chiếc hộp (tên biến) và bỏ một món đồ vào trong (giá trị). Khi cần dùng, bạn chỉ cần gọi tên nhãn để lấy món đồ đó ra."
+            "value": "Biến và Kiểu dữ liệu"
         },
         {
             "type": "text",
-            "value": "Trong Dart, chúng ta dùng từ khóa 'var' để tạo ra một chiếc hộp."
+            "value": "Biến là nơi lưu trữ dữ liệu trong chương trình. Dart là ngôn ngữ type-safe, nghĩa là bạn cần khai báo kiểu dữ liệu cho biến (hoặc để Dart tự suy luận)."
         },
         {
-            "type": "code",
-            "value": "var hop_qua = 'Gấu bông';\nprint(hop_qua); // Kết quả: Gấu bông",
-            "language": "dart",
-            "keywords": [
-                "var",
-                "print"
+            "type": "key_concepts",
+            "concepts": [
+                {
+                    "title": "Khai báo biến",
+                    "description": "Có 3 cách: var (tự suy luận), final (không thể thay đổi sau khi gán), const (hằng số compile-time)."
+                },
+                {
+                    "title": "Kiểu dữ liệu cơ bản",
+                    "description": "int (số nguyên), double (số thực), String (chuỗi), bool (true/false)."
+                },
+                {
+                    "title": "Type inference",
+                    "description": "Dart có thể tự động suy luận kiểu dữ liệu từ giá trị bạn gán."
+                }
             ]
         },
         {
-            "type": "heading",
-            "value": "2. Quy tắc đặt tên (Quan trọng)"
-        },
-        {
-            "type": "text",
-            "value": "Máy tính rất khắt khe trong việc đặt tên nhãn cho chiếc hộp."
+            "type": "code",
+            "value": "void main() {\n  // Khai báo với var (tự suy luận)\n  var name = 'Dart';\n  var age = 10;\n  \n  // Khai báo với kiểu cụ thể\n  String language = 'Dart';\n  int version = 3;\n  \n  // final - không thể thay đổi\n  final pi = 3.14;\n  \n  // const - hằng số\n  const maxUsers = 100;\n}",
+            "language": "dart",
+            "keywords": [
+                "var",
+                "final",
+                "const",
+                "String",
+                "int"
+            ]
         },
         {
             "type": "comparison",
-            "wrong": "var 1st_name = 'John';",
-            "right": "var firstName = 'John';",
-            "reason": "Tên biến không được bắt đầu bằng số và nên dùng kiểu lạc đà (camelCase)."
+            "wrong": "var x = 10;\nx = 'hello'; // Lỗi! Không thể đổi kiểu",
+            "right": "var x = 10;\nx = 20; // OK - cùng kiểu int",
+            "reason": "Khi dùng var, Dart sẽ suy luận kiểu từ giá trị đầu tiên. Bạn không thể gán giá trị khác kiểu sau đó."
         },
         {
-            "type": "divider"
-        },
-        {
-            "type": "heading",
-            "value": "3. Hằng số - Những chiếc hộp bị khóa"
-        },
-        {
-            "type": "text",
-            "value": "Nếu bạn muốn món đồ trong hộp không bao giờ bị thay đổi, hãy dùng 'final'."
-        },
-        {
-            "type": "code",
-            "value": "final String ngay_sinh = '01/01/2000';\n// ngay_sinh = '02/02/2000'; // LỖI! Không thể đổi ngày sinh",
-            "language": "dart",
-            "keywords": [
-                "final",
-                "String"
+            "type": "step_by_step",
+            "title": "Cách khai báo biến đúng",
+            "steps": [
+                "Quyết định xem biến có thay đổi giá trị không",
+                "Nếu không thay đổi: dùng final hoặc const",
+                "Nếu thay đổi: dùng var hoặc khai báo kiểu cụ thể",
+                "Đặt tên biến có ý nghĩa, dùng camelCase"
             ]
         },
         {
-            "type": "quiz",
-            "question": "Từ khóa nào giúp tạo ra một biến không thể thay đổi giá trị?",
+            "type": "practice",
+            "title": "Bài tập: Khai báo biến",
+            "description": "Hãy khai báo các biến sau: tên của bạn (String), tuổi (int), và một hằng số PI = 3.14159",
+            "code_template": "void main() {\n  // TODO: Khai báo biến tên\n  // TODO: Khai báo biến tuổi\n  // TODO: Khai báo hằng số PI\n}",
+            "solution": "void main() {\n  String name = 'Nguyễn Văn A';\n  int age = 25;\n  const double PI = 3.14159;\n}",
+            "hint": "Dùng String cho tên, int cho tuổi, và const double cho PI"
+        },
+        {
+            "type": "callout",
+            "style": "tip",
+            "value": "💡 Mẹo: Luôn dùng final thay vì var nếu biến không thay đổi. Điều này giúp code an toàn hơn và dễ đọc hơn."
+        },
+        {
+            "type": "checkpoint",
+            "question": "Sự khác biệt giữa final và const là gì?",
             "options": [
-                "var",
-                "dynamic",
-                "final"
+                "final là runtime constant, const là compile-time constant",
+                "final và const giống hệt nhau",
+                "const có thể thay đổi, final thì không",
+                "final dùng cho số, const dùng cho chuỗi"
             ],
-            "answer": 2
+            "correct_answer": 0,
+            "explanation": "final được tính toán tại runtime (có thể phụ thuộc vào giá trị khác), còn const phải là giá trị cố định tại compile-time."
+        },
+        {
+            "type": "summary",
+            "value": "Bạn đã học về cách khai báo biến trong Dart với var, final, const và các kiểu dữ liệu cơ bản. Nhớ rằng Dart là type-safe nên cần cẩn thận khi gán giá trị.",
+            "key_points": [
+                "var để Dart tự suy luận kiểu",
+                "final cho biến không đổi (runtime)",
+                "const cho hằng số (compile-time)",
+                "Các kiểu cơ bản: int, double, String, bool"
+            ]
         }
     ]
 }
